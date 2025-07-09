@@ -43,7 +43,7 @@ The Alpine installer is highly recommended due to the incredibly low resource us
 ### Oneliner:
 
 ```
-wget https://raw.githubusercontent.com/smokeleaf/DashyDashboardForLXC/refs/heads/main/Ubuntu%20Scripts/install-dashy-ubuntu18.04-22.04.sh
+wget https://raw.githubusercontent.com/smokeleaf/DashyDashboardForLXC/refs/heads/main/Ubuntu%20Scripts/install-dashy-ubuntu18.04-22.04.sh && chmod +x install-dashy-ubuntu18.04-22.04.sh && :/install-dashy-ubuntu18.04-22.04.sh
 ```
 
 Ubuntu LXC containers are supported with the Ubuntu version of the script, HOWEVER you can expect to see much higher system usage due to Ubuntu overhead. (300MB+)
