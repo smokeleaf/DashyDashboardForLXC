@@ -4,21 +4,24 @@
 set -o errexit
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#READ ME FIRST: This script is intended to be directly run on a ubuntu 20.10 LXC privileged container.
-#I have only tested on that but I would imagine you could run this on any Ubuntu machine as long as you 
-#edit the directories used to fit your needs.
+#READ ME FIRST: This script is intended to be directly run on a ubuntu 22.04 LXC privileged container.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Let's start by making sure we are up to date
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y && apt autoremove && reboot
+
 #Downloading and installing dependencies for getting packages dependent software - Git, Curl, and net-tools for printing local IP at the end.
 sudo apt-get install git curl net-tools
+
 #Now that we have Curl, lets add the corect version of NodeJS
+
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
+
 #We need to refresh the apt repositories now
 sudo apt-get update
 sudo apt-get install -y nodejs
 sudo apt-get update && sudo apt-get upgrade -y
+
 #This may look redundant but I promise it needs to be done this way!
 #"yarn" is used by a program called cmdtest. If this process is not done like this it will 
 #always fail due to cmdtest being installed. If you know a better way please let me know! 
@@ -30,6 +33,7 @@ sudo apt-get update
 sudo apt-get install yarn
 echo
 echo
+
 #Print versions of Yarn and NodeJS
 echo Yarn Version:
 yarn --version 
@@ -39,9 +43,12 @@ echo
 echo If you did not get a version of both Yarn and NodeJS then something did not work.
 echo 
 #Time to download Dashy
+
 git clone https://github.com/Lissy93/dashy.git
 cd /root/dashy/
-yarn --ignore-engines # Install dependencies
+# Install dependencies
+yarn --ignore-engines
+# --ignore-engines, cause there would be a version error, tmp worked for me
 #Yarn will run out of memory when trying to build. This next command will allow 
 #NodeJS to build with a max size of 1000mb of memory. It will fail without it. 
 export NODE_OPTIONS=--max-old-space-size=1000
