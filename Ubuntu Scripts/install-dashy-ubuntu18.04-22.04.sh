@@ -8,7 +8,7 @@ set -o errexit
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Let's start by making sure we are up to date
-sudo apt update && sudo apt upgrade -y && apt autoremove && reboot
+sudo apt update && sudo apt upgrade -y && apt autoremove -y
 
 #Downloading and installing dependencies for getting packages dependent software - Git, Curl, and net-tools for printing local IP at the end.
 sudo apt-get install git curl net-tools
