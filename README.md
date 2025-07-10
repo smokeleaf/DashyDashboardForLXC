@@ -19,6 +19,6 @@ After Install:
 ### Oneliner:
 
 ```
-wget https://raw.githubusercontent.com/smokeleaf/DashyDashboardForLXC/refs/heads/main/Ubuntu%20Scripts/install-dashy-ubuntu22.04.sh && chmod +x install-dashy-ubuntu18.04-22.04.sh && ./install-dashy-ubuntu18.04-22.04.sh
+wget https://raw.githubusercontent.com/smokeleaf/DashyDashboardForLXC/refs/heads/main/Ubuntu%20Scripts/install-dashy-ubuntu22.04.sh && chmod +x install-dashy-ubuntu22.04.sh && ./install-dashy-ubuntu22.04.sh
 
 ```
