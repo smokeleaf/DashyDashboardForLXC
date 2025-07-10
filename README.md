@@ -6,6 +6,8 @@
 | ------------------------------------------- | ------- |
 | ubuntu-22.04-standard_22.04-1_amd64 (Jammy) | ✅     |
 
+8GB disk
+
 On Install:
 2cpus
 4096mb RAM
