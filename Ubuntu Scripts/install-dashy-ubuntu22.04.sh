@@ -25,12 +25,12 @@ sudo apt-get update && sudo apt-get upgrade -y
 #This may look redundant but I promise it needs to be done this way!
 #"yarn" is used by a program called cmdtest. If this process is not done like this it will 
 #always fail due to cmdtest being installed. If you know a better way please let me know! 
-sudo apt-get remove cmdtest
-sudo apt-get autoremove
+sudo apt-get remove cmdtest -y
+sudo apt-get autoremove -y
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
-sudo apt-get install yarn
+sudo apt-get install yarn -y
 echo
 echo
 
