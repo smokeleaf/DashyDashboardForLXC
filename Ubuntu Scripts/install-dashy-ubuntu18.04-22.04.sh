@@ -41,7 +41,7 @@ echo
 #Time to download Dashy
 git clone https://github.com/Lissy93/dashy.git
 cd /root/dashy/
-yarn # Install dependencies
+yarn --ignore-engines # Install dependencies
 #Yarn will run out of memory when trying to build. This next command will allow 
 #NodeJS to build with a max size of 1000mb of memory. It will fail without it. 
 export NODE_OPTIONS=--max-old-space-size=1000
